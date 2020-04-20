@@ -45,9 +45,6 @@ T = 0:dt:tf;
 
 [x,xdot,z] = RKDAE(BT_IRK4, F, dFdxdot, dFdx, dFdz, T, x0, z0);
 
-%% Simulation using built-in solvers
-[tout,xout] = ode15s(@(t,x) F(x(4:6),x(1:3),x(7),t), [0 tf], [x0; z0]);
-
 
 %% Plot 3D
 figure(1);
